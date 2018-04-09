@@ -7,7 +7,9 @@ public class AndGate extends Gate{
 	private Emitter[] emitters;
 	
 	public AndGate() {
+		super("AndGate", 2);
 		emitters = new Emitter[2];
+	
 	}
 	
 	@Override

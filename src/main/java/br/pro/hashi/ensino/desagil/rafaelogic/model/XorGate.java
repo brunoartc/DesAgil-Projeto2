@@ -10,6 +10,7 @@ public class XorGate extends Gate{
 	private Gate nand3 = new NandGate();
 	
 	public XorGate() {
+		super("XorGate",2);
 		emitters = new Emitter[2];
 	}
 	

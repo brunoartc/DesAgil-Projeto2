@@ -8,7 +8,7 @@ public class OrGate extends Gate{
 	private NandGate  nandOut = new NandGate();
 
 	public OrGate(){
-
+		super("OrGate",2);
 	}
 
 	public void connect(int pinIndex, Emitter emitter){

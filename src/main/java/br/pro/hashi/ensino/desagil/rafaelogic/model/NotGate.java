@@ -6,6 +6,7 @@ public class NotGate extends Gate{
 	private boolean Nand1;
 
 	public NotGate() {
+		super("NotGate", 1);
 		emitters = new Emitter[1];
 		gate = new NandGate();
 	}
