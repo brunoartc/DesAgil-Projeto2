@@ -17,6 +17,7 @@ public class Main {
 				model.add(new NandGate());
 				model.add(new OrGate());
 				model.add(new XorGate());
+				model.add(new NotGate());
 				
 				View view = new View(model);
 				

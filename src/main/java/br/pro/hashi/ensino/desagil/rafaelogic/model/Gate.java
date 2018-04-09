@@ -20,7 +20,6 @@ public abstract class Gate implements Emitter, Receiver {
 
 	public boolean read() {
 		// Just an empty vessel
-		
 		return false;
 	}
 

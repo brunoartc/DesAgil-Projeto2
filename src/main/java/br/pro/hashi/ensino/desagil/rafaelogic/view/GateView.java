@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import java.util.LinkedList;
 
 import br.pro.hashi.ensino.desagil.rafaelogic.model.Gate;
+import br.pro.hashi.ensino.desagil.rafaelogic.model.NotGate;
 import br.pro.hashi.ensino.desagil.rafaelogic.model.Source;
 
 public class GateView extends JPanel implements ItemListener{
@@ -31,8 +32,8 @@ public class GateView extends JPanel implements ItemListener{
 	private JCheckBox output;
 	
 	public GateView(Gate gate) {
-		//TODO usar algum método para generalizar de acordo com o
-		//número de entradas no gate
+		//TODO usar algum mï¿½todo para generalizar de acordo com o
+		//nï¿½mero de entradas no gate
 		this.gate = gate;		
 		JLabel entradaLabel = new JLabel("Entrada:");
 		
@@ -42,12 +43,17 @@ public class GateView extends JPanel implements ItemListener{
 		sourceA = new Source();
 		this.gate.connect(0, sourceA);
 		
-		inputBBox = new JCheckBox("Input B");
-		inputBBox.setSelected(false);
-		inputBBox.addItemListener(this);
-		sourceB = new Source();
-		this.gate.connect(1, sourceB);
 		
+		if (gate.toString() != "NotGate") {
+			System.out.println(gate);
+			inputBBox = new JCheckBox("Input B");
+			inputBBox.setSelected(false);
+			inputBBox.addItemListener(this);
+			sourceB = new Source();
+			this.gate.connect(1, sourceB);
+		} else {
+			System.out.println("ia");
+		}
 		JLabel saidaLabel = new JLabel("Saida:");
 		output = new JCheckBox("Output");
 		output.setEnabled(false);
@@ -56,12 +62,12 @@ public class GateView extends JPanel implements ItemListener{
 		
 		add(entradaLabel);
 		add(inputABox);
-		add(inputBBox);
+		if (gate.toString() != "NotGate") add(inputBBox);
 		add(saidaLabel);
 		add(output);
 		
 		inputABox.addItemListener(this);
-        inputBBox.addItemListener(this);
+		if (gate.toString() != "NotGate") inputBBox.addItemListener(this);
         output.addItemListener(this);	
 		
 	}
@@ -69,7 +75,7 @@ public class GateView extends JPanel implements ItemListener{
 
 	public void itemStateChanged(ItemEvent e) {
 		sourceA.turn(inputABox.isSelected());
-		sourceB.turn(inputBBox.isSelected());
+		if (gate.toString() != "NotGate") sourceB.turn(inputBBox.isSelected());
 		output.setSelected(gate.read());
 		
 	}
