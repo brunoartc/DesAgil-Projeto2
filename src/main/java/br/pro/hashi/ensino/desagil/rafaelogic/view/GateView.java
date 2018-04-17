@@ -42,6 +42,7 @@ public class GateView extends SimplePanel implements ItemListener, MouseListener
 	private Color ColorChanger;
 
 	public GateView(Gate gate) {
+		//TODO achar proporcao da tela/imagem @wes @vini
 		super(200, 200); //tamanho da tela
 		
 		ColorChanger = Color.RED;
@@ -142,7 +143,7 @@ public class GateView extends SimplePanel implements ItemListener, MouseListener
 
 		super.paintComponent(g);
 
-		g.drawImage(image, 30, 30, 100, 100, null); //desenha tela
+		g.drawImage(image, 30, 30, 100, 100, null); //desenha tela 
 		
 		g.setColor(color); //define core
 	    g.fillOval(100, 75, 30, 30); //faz elipse (no caso circulo)
