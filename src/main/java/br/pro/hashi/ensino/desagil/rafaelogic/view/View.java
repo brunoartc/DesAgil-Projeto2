@@ -48,7 +48,7 @@ public class View extends JPanel implements ItemListener,ActionListener{
 		// TODO Auto-generated method stub
 		
 	}
-
+	@Override
 	public void actionPerformed(ActionEvent e) {
 		remove(gateView);
 		int index = menu.getSelectedIndex();
