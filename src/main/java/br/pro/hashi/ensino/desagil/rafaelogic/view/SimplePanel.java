@@ -23,3 +23,5 @@ public class SimplePanel extends JPanel {
 		return comp;
 	}
 }
+
+
